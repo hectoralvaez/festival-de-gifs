@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AddCategory } from "./components/AddCategory";
 
 export const GifExpertApp = () => {
 
@@ -59,7 +60,7 @@ export const GifExpertApp = () => {
         // setCategories(['Valorant']); // de esta manera estamos borrando todo lo que había y solotiene el nuevo valor "Valorant"
         // Si lo que queremos es recuperar los valores anteriormente almacenados en la array 
         // "categories", hay que ponerle delante "..." para que quede:
-        
+
         // setCategories([...categories, 'Valorant']); // Así lo añade al final del array
         setCategories(['Valorant', ...categories]); // Así lo añade al inicio del array
     }
@@ -73,11 +74,12 @@ export const GifExpertApp = () => {
             <h1>GifExpertApp</h1>
 
             {/* Input */}
+            <AddCategory />
 
             {/* Listado de Gifs */}
             <button onClick={ handleAddCategory }>Agregar</button>
             <ol>
-                <li>{ categories }</li>
+                {/* <li>{ categories }</li> */}
                 {/* Si se usa el { categories } el resultado es:
                     1. One PunchDragon ball */}
 
