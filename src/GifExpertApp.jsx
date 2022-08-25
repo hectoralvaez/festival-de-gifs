@@ -48,6 +48,22 @@ export const GifExpertApp = () => {
     */
     // FIN IMPORTANTE!!!
 
+    const handleAddCategory = () => {
+
+        // Con push, que es como se añaden elementos a arrays.
+        // categories.push('Valorant');
+        // El push en React se usa para muter objetos, y no es lo que queremos ahora
+
+        // Para insertar elementos en arrays se usa el setXxxxxx
+        // Con setCategories([ ]); estamos generando la "nueva" array
+        // setCategories(['Valorant']); // de esta manera estamos borrando todo lo que había y solotiene el nuevo valor "Valorant"
+        // Si lo que queremos es recuperar los valores anteriormente almacenados en la array 
+        // "categories", hay que ponerle delante "..." para que quede:
+        
+        // setCategories([...categories, 'Valorant']); // Así lo añade al final del array
+        setCategories(['Valorant', ...categories]); // Así lo añade al inicio del array
+    }
+
     console.log(categories);
 
     
@@ -59,6 +75,7 @@ export const GifExpertApp = () => {
             {/* Input */}
 
             {/* Listado de Gifs */}
+            <button onClick={ handleAddCategory }>Agregar</button>
             <ol>
                 <li>{ categories }</li>
                 {/* Si se usa el { categories } el resultado es:
