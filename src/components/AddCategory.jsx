@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const AddCategory = ({ setCategories }) => {     // Aquí ponemos las "props" { setCategories } pero desestructuradas, de manera que ya podemos 
+export const AddCategory = ({ onNewCategory }) => {     // Aquí ponemos las "props" { setCategories } pero desestructuradas, de manera que ya podemos 
                                                         // gestionar la función "setCategories"
     const [inputValue, setInputValue] = useState('');   // Ya podemos eliminar el valor que dábamos de inicio al "inputValue" (One Punch)
                                                         // de manera que quede limpio el input cuando se carga la página 
@@ -19,12 +19,13 @@ export const AddCategory = ({ setCategories }) => {     // Aquí ponemos las "pr
         if( inputValue.trim().length <= 1) return;      // De esta manera controlamos que si el contenido del imput 
                                                         //está vacío o solo tiene un caracter, que salga de la función y no inserte contenido vacío en el array de categorías.
 
-        setCategories( categories => [inputValue, ...categories]);  // Al useState de "setCategories" se le añade el callback usando una función de 
+        // setCategories( categories => [inputValue, ...categories]);  // Al useState de "setCategories" se le añade el callback usando una función de 
                                                                     // flecha, de manera que a "categories" se le añade el elemento nuevo + las categorias que ya tenía
                                                                     // que se idinca de la siguiente manera "...categories".
                                                                     // De alguna manera es como decirle que las categorias (A) ahora van a ser la nueva (B) + las que ya tenía (C)
                                                                     // (A)           (B)             (C)
                                                                     // categories => [inputValue, ...categories]
+        onNewCategory( inputValue.trim() );
         setInputValue('');  // De esta manera dejamos vacío el input al enviar el formulario (darle al intro)
     }
 
