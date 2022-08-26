@@ -1,3 +1,13 @@
+# 81. Fetch API - Obtener las imágenes deseadas
+
+> NO LLAMAR NUNCA LA EJECUCIÓN DE UNA FUNCIÓN DENTRO DE UN FUNCTIONAL COMPOENT!  
+> Cada vez que se llama al Functional Component `<GifGrid />` y se renderiza, vuelve a ejecutar la función `getGifs(category)`
+
+
+PENDIENTE EN ESTA CLASE:  
+Mover la llamada a la función `getGifs(category)` fuera del functional component para que NO se dispare cada vez que se llama al functional component.
+
+
 # 80. GifGrid - Nuevo componente
 Este componente mostrará cada grid independiente.
 
