@@ -1,3 +1,7 @@
+# 80. GifGrid - Nuevo componente
+Este componente mostrará cada grid independiente.
+
+
 # 79. Validar que sean únicos los nombres
 
 > IMPORTANTE: 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GifExpertApp = () => {
 
@@ -80,21 +81,19 @@ export const GifExpertApp = () => {
             {/* <AddCategory setCategories={ setCategories }/> */}
             <AddCategory onNewCategory={ ( value ) => onAddCategory(value) }/>  {/* RECORDATORIO: "onNewCategory" simplemente es una propiedad (prop)  */}
             {/* Listado de Gifs */}            
-            <ol>
                 {/* <li>{ categories }</li> */}
                 {/* Si se usa el { categories } el resultado es:
                     1. One PunchDragon ball */}
 
                 { 
-                    categories.map( category => {
-                        return <li key={ category }> { category } </li>
-                    } ) 
+                    categories.map( (category) => (
+                        <GifGrid key={category} category={ category } />
+                     ) ) 
                     // Si no ponemos el propertiy "key" da error.
                     // Es obligatorio usar el "key" en el uso de "map"
                     // El key tiene que ser único, en este ejemplo no está bien ya que se puede repetir la categoría
                 }
 
-            </ol>
                 {/* Gif Item */}
 
         </>
