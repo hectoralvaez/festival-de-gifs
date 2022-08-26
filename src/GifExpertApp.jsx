@@ -12,7 +12,7 @@ export const GifExpertApp = () => {
     // y pueden haber inconvenientes.
     // Se inicializa como un array "[]" con un primer valor, por lo tanto, será "useState([ 'El primer valor' ])"
 
-    const [categories, setCategories] = useState([ 'One Punch', 'Dragon ball' ]);
+    const [categories, setCategories] = useState([ 'One Punch']);
     const [categories2, setCategories2] = useState([ 'One Punch', 'Dragon ball' ]);
     const [categories3, setCategories3] = useState([ 'One Punch', 'Dragon ball' ]);
     
