@@ -63,6 +63,8 @@ export const GifExpertApp = () => {
 
         // setCategories([...categories, 'Valorant']); // Así lo añade al final del array
         // setCategories(['Valorant', ...categories]); // Así lo añade al inicio del array
+        if( categories.includes(newCategory) ) return;  // De esta manera evitamos tener valores repetidos, ya que "newCategory" es el nuevo valor y lo que hacemos con el 
+                                                        // "categories.includes(newCategory)" es comprobar si ya existe ese valor en el array
         setCategories([newCategory, ...categories]); // Aquí pasamos el valor que recibe la función "onAddCategory"
     }
 
