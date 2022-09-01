@@ -43,6 +43,18 @@ export const GifGrid = ({ category }) => {
     return (
         <>
             <h3>{ category }</h3>
+            {
+                // VERSIÓN 1: Condicional ternario
+                // isLoading
+                // ? (<h2>Cargando...</h2>)
+                // : null
+                
+                // VERSIÓN 2: if corto con una sola condición.
+                // Si isLoading = true, ejecuta lo que hay después de "&&"
+                // Si isLoading = false, ya no continua y salta
+                // "&&" se conoce como "AND LÓGICO"
+                isLoading && (<h2>Cargando...</h2>)
+            }
             <div className="card-grid">
                 {
                     // VERSIÓN 1 (desestructurando el objeto para sacar las props que necesitamos de manera independiente)
