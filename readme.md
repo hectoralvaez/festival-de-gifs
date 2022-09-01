@@ -3,6 +3,33 @@
 
 ---
 
+# FIN SECCIÓN 6: GifExpertApp - Aplicación
+
+# 88. Archivos de barril
+Los "Archivos de barril" sirven para unificar los compoents, o heplers, o hooks en un solo archivo encargado de exportar, de manera que en ua sola linea se pueden hacer todos los imports, como trabaja React:  
+
+```javascript
+import { useEffect, useState } from "react";
+```
+De manera que podemos pasar de esto:
+```javascript
+import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
+```
+
+A esto:
+```javascript
+import { AddCategory, GifGrid } from "./components";
+```
+
+Si el archivo de barril se llama index.js, no hace falta especificar el nombre, ya que por defecto, si hasces una llamada a la carpeta sin definir el archivo, carga el index (como en todos los lenguajes de programación)
+
+
+
+
+<br />
+
+---
 # 87. Mostrar mensaje de carga
 VERSIÓN 1: Condicional ternario  
 
@@ -28,6 +55,10 @@ Si isLoading = false, ya no continua y salta
 isLoading && (<h2>Cargando...</h2>)
 ```
 
+
+<br />
+
+---
 
 # 86. Custom Hook - useFetchGifs (clase muy densa, repasar)
 
@@ -252,3 +283,8 @@ En realidad podría ser así:
 > IMPORTANTE: 
 > usar el prefijo "on" para eventos que disparen los botones, o lo que sea.
 > En este caso `onAddCategory` 
+
+<br />
+
+---
+# INICIO SECCIÓN 6: GifExpertApp - Aplicación
