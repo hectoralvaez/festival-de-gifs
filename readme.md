@@ -12,12 +12,26 @@
 
 ---
 
+# 93. Preparación del proyecto - Github Pages
+Arrancar git  
+
+Terminal:  
+`git init`
+
+<br />
+
+---
+
 # 92. Desplegar en Netlify
 Para desplegar aplicaciones sin BackEnd  
 [Netlify](https://www.netlify.com/)
 
 https://festivaldegifs.netlify.app
 
+
+<br />
+
+---
 
 # 91. Temas puntuales de la sección
 
@@ -35,11 +49,15 @@ Aunque es una sección pequeña, les puede servir para desplegar infinidad de pr
 
 
 
+<br />
+
+---
 
 
 # INICIO SECCIÓN 7: Generando el build de producción y despliegues
 
 
+---
 
 
 # FIN SECCIÓN 6: GifExpertApp - Aplicación
