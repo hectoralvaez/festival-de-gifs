@@ -1,6 +1,65 @@
+# 84. Mostrar los títulos de las imágenes
+
+### IMPORTANTE:  
+useEffect no puede usar "async", tiene que retornar una función, no una promesa.  
+
+```javascript
+// ESTO NO ES CORRECTO:
+useEffect ( async() => {
+    const newImages = await getGifs(category);
+    setImages(newImages);
+}, []);
+```
+
+```javascript
+// CORRECTO VERSIÓN 1, con "then":
+useEffect ( () => {
+    getGifs(category)
+    .then( newImages => setImages(newImages));
+}, []);
+```
+
+```javascript
+// CORRECTO VERSIÓN 2, con función asíncrona independiente:
+const getImages = async() => {
+    const newImages = await getGifs( category );
+    setImages(newImages);
+}
+
+useEffect ( () => {
+    getImages();
+}, []);
+```
+Esta función SÍ puede ser asíncrona, podemos pasarle la promesa y luego llamar a esta función dentro del "useEffect" para que no se ejecute siempre, solo la primera vez que carga el componente  
+<br />
+
+### IMPORTANTE:  
+Para hacer el bucle de los elementos, hay que partir del "map" que se genera con el `useState`:  
+```javascript
+const [images, setImages] = useState([]);
+```
+
+Por lo tanto, el "map" parte de "images" de manera que se usa asi:
+
+```javascript
+{
+    images.map( ({id, title}) => ( 
+        <li key={id}>{ title }</li>
+    ) ) 
+}
+```
+
+<br />
+
+---
+
 # 83. Demostración de producción rápido
 
 Para generar el build de producción, simplemente hay que llamar al comando `yarn build`, que genera el bundel final, en la carpeta "dist" que sería el contenido a subir al hosting.
+
+<br />
+
+---
 
 # 82. useEffect
 
