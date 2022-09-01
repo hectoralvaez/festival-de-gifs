@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
-import { getGifs } from "../helpers/getGifs"
+import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifItem } from "./GifItem";
 
 export const GifGrid = ({ category }) => {
     // Creamos un estado local para mantener las imágenes dentro del "GifGrid"
-    const [images, setImages] = useState([]); // Inicializamos el estado con un Array vacío, podría ser "false", pero al dejarlo vacío, luego controlamos cuando el array tenga contenido para mostrarlo.
+    // const [images, setImages] = useState([]); // Inicializamos el estado con un Array vacío, podría ser "false", pero al dejarlo vacío, luego controlamos cuando el array tenga contenido para mostrarlo.
 
     // NO LLAMAR NUNCA LA EJECUCIÓN DE UNA FUNCIÓN dentro de un functional component
     // Cada vez que se llama al Functional Component <GifGrid /> y se renderiza, vuelve a ejecutar la función getGifs(category)
@@ -30,17 +29,17 @@ export const GifGrid = ({ category }) => {
     // CORRECTO VERSIÓN 2:
     // Esta función SÍ puede ser asíncrona, podemos pasarle la promesa y luego llamar a esta función dentro del "useEffect" 
     // para que no se ejecute siempre, solo la primera vez que carga el componente
-    const getImages = async() => {
-        const newImages = await getGifs( category );
-        setImages(newImages);
-    }
+    // const getImages = async() => {
+    //     const newImages = await getGifs( category );
+    //     setImages(newImages);
+    // }
 
-    useEffect ( () => {
-        getImages();
-    }, []);
+    // useEffect ( () => {
+    //     getImages();
+    // }, []);
     // FIN CORRECTO VERSIÓN 2:
 
-
+    const { images, isLoading } = useFetchGifs ( category );
     return (
         <>
             <h3>{ category }</h3>

@@ -1,3 +1,25 @@
+> ### LINKS DE INTERÉS:  
+> [Documentación de React y recursos relacionados](https://es.reactjs.org/docs/getting-started.html)
+
+---
+
+
+# 86. Custom Hook - useFetchGifs (clase muy densa, repasar)
+
+> Construir tus propios Hooks te permite extraer la lógica del componente en funciones reutilizables.
+
+Los Hooks tienen que empezar siempre por "use", es un estandar de React.  
+
+Un Hook no es más que una función que devuelve algo, en este ejemplo "useFetchGifs" devuelve un objeto.  
+
+MÁS INFO:  
+[Construyendo tus propios Hooks](https://es.reactjs.org/docs/hooks-custom.html)
+
+
+<br />
+
+---
+
 # 85. className - Clases de css
 
 VERSIÓN 1  
