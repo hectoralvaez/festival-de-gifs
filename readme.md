@@ -1,3 +1,7 @@
+# 83. Demostración de producción rápido
+
+Para generar el build de producción, simplemente hay que llamar al comando `yarn build`, que genera el bundel final, en la carpeta "dist" que sería el contenido a subir al hosting.
+
 # 82. useEffect
 
 Hay que solucionar dos problemas muy comunes cuando estamos empezando en React:  
