@@ -1,9 +1,22 @@
 > ### LINKS DE INTERÉS:  
-> [Documentación de React y recursos relacionados](https://es.reactjs.org/docs/getting-started.html)
+> [Documentación de React y recursos relacionados](https://es.reactjs.org/docs/getting-started.html)  
+
+> EXTRAS:  
+> [Netlify](https://www.netlify.com/): Desplegar desplegar aplicaciones sin BackEnd.  
+> [Jest](https://jestjs.io/): Para hacer tests en Babel, TypeScript, Node, React, Angular, Vue y más.  
+> [Vite](https://vitejs.dev/): La alternativa a Create React App [CRA](https://create-react-app.dev/), es más ligero  
+
+
+> MORE INFO:  
+> [Use Vite for React Apps instead of CRA](https://dev.to/nilanth/use-vite-for-react-apps-instead-of-cra-3pkg)
 
 ---
 
+# 92. Desplegar en Netlify
+Para desplegar aplicaciones sin BackEnd  
+[Netlify](https://www.netlify.com/)
 
+https://festivaldegifs.netlify.app
 
 
 # 91. Temas puntuales de la sección
