@@ -11,7 +11,7 @@ export const GifExpertApp = () => {
     // y pueden haber inconvenientes.
     // Se inicializa como un array "[]" con un primer valor, por lo tanto, será "useState([ 'El primer valor' ])"
 
-    const [categories, setCategories] = useState([ 'One Punch']);
+    const [categories, setCategories] = useState([ 'APM']);
     const [categories2, setCategories2] = useState([ 'One Punch', 'Dragon ball' ]);
     const [categories3, setCategories3] = useState([ 'One Punch', 'Dragon ball' ]);
     
@@ -72,7 +72,7 @@ export const GifExpertApp = () => {
     return(
         <>
             {/* Título */}
-            <h1>GifExpertApp</h1>
+            <h1>Festival de Gifs</h1>
 
             {/* Input */}
             {/* <AddCategory setCategories={ setCategories }/> */}
