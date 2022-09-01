@@ -51,7 +51,6 @@ export const GifExpertApp = () => {
     // FIN IMPORTANTE!!!
 
     const onAddCategory = ( newCategory ) => {
-        console.log(newCategory);
         // Con push, que es como se añaden elementos a arrays.
         // categories.push('Valorant');
         // El push en React se usa para muter objetos, y no es lo que queremos ahora
@@ -69,7 +68,6 @@ export const GifExpertApp = () => {
         setCategories([newCategory, ...categories]); // Aquí pasamos el valor que recibe la función "onAddCategory"
     }
 
-    console.log(categories);
 
     
     return(

@@ -15,7 +15,6 @@ export const AddCategory = ({ onNewCategory }) => {     // Aquí ponemos las "pr
 
     const handleSubmit = ( event ) => {
         event.preventDefault();     // Con event.preventDefault(), evitamos que se recargue la página (refresh del navegador web) por el event "submit"
-        console.log(inputValue);
         if( inputValue.trim().length <= 1) return;      // De esta manera controlamos que si el contenido del imput 
                                                         //está vacío o solo tiene un caracter, que salga de la función y no inserte contenido vacío en el array de categorías.
 
