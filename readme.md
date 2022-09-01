@@ -1,3 +1,46 @@
+# 85. className - Clases de css
+
+VERSIÓN 1  
+Desestructurando el objeto para sacar las props que necesitamos de manera independiente
+```javascript
+images.map( ({id, title, url}) => (
+    <GifItem 
+        key={id} 
+        title={title}
+        url={url}
+    />
+ ) ) 
+```
+
+VERSIÓN 2  
+Pasando como props "image" para enviar todas las propiedasdes completas
+
+```javascript
+images.map( ( image ) => (
+    <GifItem 
+        key={image.id} 
+        title={image.title}
+        url={image.url}
+    />
+ ) ) 
+```
+
+VERSIÓN 3 ESPARCIR LAS PROPS  
+Esparcir las "props", de esta manera el component recibe TODAS las properties
+```javascript
+images.map( ( image ) => (
+    <GifItem 
+        key={image.id} 
+        { ...image }
+    />
+    ) ) 
+```
+
+<br />
+
+---
+
+
 # 84. Mostrar los títulos de las imágenes
 
 ### IMPORTANTE:  

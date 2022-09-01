@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getGifs } from "../helpers/getGifs"
+import { GifItem } from "./GifItem";
 
 export const GifGrid = ({ category }) => {
     // Creamos un estado local para mantener las imágenes dentro del "GifGrid"
@@ -43,13 +44,34 @@ export const GifGrid = ({ category }) => {
     return (
         <>
             <h3>{ category }</h3>
-            <ol>
+            <div className="card-grid">
                 {
-                    images.map( ({id, title}) => (      // usamos el "map" de "images" que es donde se está guardando el useState de "setImages"
-                        <li key={id}>{ title }</li>
+                    // VERSIÓN 1 (desestructurando el objeto para sacar las props que necesitamos de manera independiente)
+                    // images.map( ({id, title, url}) => (      // usamos el "map" de "images" que es donde se está guardando el useState de "setImages"
+                    //     <GifItem 
+                    //         key={id} 
+                    //         title={title}
+                    //         url={url}
+                    //     />
+                    //  ) ) 
+
+                    // VERSIÓN 2 (pasando como props "image" para enviar todas las propiedasdes completas)
+                    // images.map( ( image ) => (      // usamos el "map" de "images" que es donde se está guardando el useState de "setImages"
+                    //     <GifItem 
+                    //         key={image.id} 
+                    //         title={image.title}
+                    //         url={image.url}
+                    //     />
+                    //  ) ) 
+                    // VERSIÓN 3 (esparcir las "props", de esta manera el component recibe TODAS las properties)
+                    images.map( ( image ) => (      // usamos el "map" de "images" que es donde se está guardando el useState de "setImages"
+                        <GifItem 
+                            key={image.id} 
+                            { ...image }
+                        />
                      ) ) 
                 }
-            </ol>
+            </div>
         </>
     )
 }
