@@ -15,6 +15,17 @@
 
 ---
 
+# 95. Desplegando aplicación en Github Pages
+Lo que tenemos en el repositiorio es un proyecto de Node.  
+Para publicar en Github Pages:
+- Hacer el `build` para que genere la carpeta `dist`
+- Una vez hecha la carpeta, renombrarla a `docs`
+- Subir el repositorio a GitHib
+
+<br />
+
+---
+
 # 94. Subir a GitHub
 > - [GitHub](https://github.com/): Plataforma de alojamiento de código para el control de versiones y la colaboración.
 
