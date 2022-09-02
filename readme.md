@@ -2,9 +2,12 @@
 > [Documentación de React y recursos relacionados](https://es.reactjs.org/docs/getting-started.html)  
 
 > EXTRAS:  
-> [Netlify](https://www.netlify.com/): Desplegar desplegar aplicaciones sin BackEnd.  
-> [Jest](https://jestjs.io/): Para hacer tests en Babel, TypeScript, Node, React, Angular, Vue y más.  
-> [Vite](https://vitejs.dev/): La alternativa a Create React App [CRA](https://create-react-app.dev/), es más ligero  
+> 
+> - [GitHub](https://github.com/): Plataforma de alojamiento de código para el control de versiones y la colaboración.
+> - [Netlify](https://www.netlify.com/): Desplegar desplegar aplicaciones sin BackEnd.
+> - [Jest](https://jestjs.io/): Para hacer tests en Babel, TypeScript, Node, React, Angular, Vue y más. (combinada con [React Testing Library](https://testing-library.com/docs/))
+> - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/): Librería para hacer tests en React (combinada con [Jest](https://jestjs.io/))
+> - [Vite](https://vitejs.dev/): La alternativa a Create React App [CRA](https://create-react-app.dev/), es más ligero
 
 
 > MORE INFO:  
@@ -12,6 +15,13 @@
 
 ---
 
+# 94. Subir a GitHub
+> - [GitHub](https://github.com/): Plataforma de alojamiento de código para el control de versiones y la colaboración.
+
+
+<br />
+
+---
 # 93. Preparación del proyecto - Github Pages
 Arrancar git  
 
