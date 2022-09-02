@@ -13,8 +13,17 @@
 > MORE INFO:  
 > [Use Vite for React Apps instead of CRA](https://dev.to/nilanth/use-vite-for-react-apps-instead-of-cra-3pkg)
 
-> NOTA:  
-> Siempre falta tiempo para hacer tests, por lo tanto, se recomienda, como mínimo, hacer el test de la ruta crítica, es decir, la parte principal de la app. Si fuera una tienda, la ruta crítica es el proceso de compra (añadir productos al carito, el cesto de la compra, etc...)  
+> ## TESTS
+>> NOTA:  
+>> Siempre falta tiempo para hacer tests, por lo tanto, se recomienda, como mínimo, hacer el test de la ruta crítica, es decir, la parte principal de la app. Si fuera una tienda, la ruta crítica es el proceso de compra (añadir productos al carito, el cesto de la compra, etc...)  
+>
+>> [Más info de tests AAA (Patrón AAA)](https://geeks.ms/jorge/2018/08/25/unit-testing-y-el-patron-aaa/)  
+>> 1. Arrange (Organizar/Inicializa) => Inicializa los objetos y establece los valores de los datos que vamos a utilizar en el Test que lo contiene.
+>> 2. Act (Actuar) => Realiza la llamada al método a probar con los parámetros preparados para tal fin.
+>> 3. Assert (Confirmar/Comprobar) => Comprueba que el método de pruebas ejecutado se comporta tal y como teníamos previsto que lo hiciera.
+>
+>> EXTRA INFO JEST:
+>> - [expect](https://jestjs.io/docs/expect)
 
 ---
 
@@ -24,6 +33,53 @@ Instalar las PropTypes (en termminal):
 `yarn add prop-types`
 <br />
 
+
+
+> ### TAREA:
+> 1. Añadir PropTypes
+>     - title obligatorio
+>     - url obligatorio
+> 
+> 2. Evaluar el snapshot  
+
+
+### 1 - Añadir PropTypes  
+En el component `GifItem.jsx`, hacer el import de PropTypes:  
+`import PropTypes from 'prop-types'` 
+
+A continuación, en el component, definir las PropTypes:  
+```javascript 
+GifItem.propType = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+}
+```
+
+### 2 - Evaluar el snapshot  
+En el test `GifItem.test.jsx`:
+
+- Importar el component a testear
+- Importar el `render` de `@testing-library/react`
+- Declaración del grupo de pruebas referentes al component `<GifItem />`
+- Declarar las variables a testear (`title`, `url`)
+- Test del render al objeto `container`
+- "Expect": `expect(container).toMatchSnapshot();`
+
+```javascript 
+// Contenido de "GifItem.test.jsx"
+import { render } from "@testing-library/react"
+import { GifItem } from "../../src/components/GifItem";
+
+describe("Pruebas en <GifItem />", () => {
+    const title = 'el título';
+    const url = 'http://www.google.com';
+
+    test("Tiene que hacer match con el snapshot", () => {
+        const { container } = render(<GifItem title={title} url={url} />);
+        expect(container).toMatchSnapshot();
+    });
+});
+```
 
 ---
 
