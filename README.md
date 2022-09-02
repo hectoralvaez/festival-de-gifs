@@ -7,13 +7,66 @@
 > - [Netlify](https://www.netlify.com/): Desplegar desplegar aplicaciones sin BackEnd.
 > - [Jest](https://jestjs.io/): Para hacer tests en Babel, TypeScript, Node, React, Angular, Vue y más. (combinada con [React Testing Library](https://testing-library.com/docs/))
 > - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/): Librería para hacer tests en React (combinada con [Jest](https://jestjs.io/))
-> - [Vite](https://vitejs.dev/): La alternativa a Create React App [CRA](https://create-react-app.dev/), es más ligero
+> - [Vite](https://vitejs.dev/): La alternativa a [Create React App (CRA)](https://create-react-app.dev/), es más ligero
 
 
 > MORE INFO:  
 > [Use Vite for React Apps instead of CRA](https://dev.to/nilanth/use-vite-for-react-apps-instead-of-cra-3pkg)
 
 ---
+
+# 99. Configurar el ambiente de pruebas
+Seguir los pasos indicados en el documento `vite-testing-config.md`.
+
+
+# Instalación y configuracion de Jest + React Testing Library
+## En proyectos de React + Vite
+
+1. Instalaciones:
+```
+yarn add --dev jest babel-jest @babel/preset-env @babel/preset-react 
+yarn add --dev @testing-library/react @types/jest jest-environment-jsdom
+```
+
+2. Opcional: Si usamos Fetch API en el proyecto:
+```
+yarn add --dev whatwg-fetch
+```
+
+3. Actualizar los scripts del __package.json__
+```
+"scripts: {
+  ...
+  "test": "jest --watchAll"
+```
+
+4. Crear la configuración de babel __babel.config.cjs__
+```
+module.exports = {
+    presets: [
+        [ '@babel/preset-env', { targets: { esmodules: true } } ],
+        [ '@babel/preset-react', { runtime: 'automatic' } ],
+    ],
+};
+```
+
+5. Opcional, pero eventualmente necesario, crear Jest config y setup:
+
+__jest.config.cjs__
+```
+module.exports = {
+    testEnvironment: 'jest-environment-jsdom',
+    setupFiles: ['./jest.setup.js']
+}
+```
+
+__jest.setup.js__
+```
+// En caso de necesitar la implementación del FetchAPI
+import 'whatwg-fetch'; // <-- yarn add whatwg-fetch
+```
+
+
 
 # 98. Temas puntuales de la sección
 
