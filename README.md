@@ -15,7 +15,11 @@
 
 ---
 
+# FIN SECCIÓN 7: Generando el build de producción y despliegues
+
+
 # 95. Desplegando aplicación en Github Pages
+# 96. Actualizar Github pages
 Lo que tenemos en el repositiorio es un proyecto de Node.  
 Para publicar en Github Pages:
 - Hacer el `build` para que genere la carpeta `dist`
