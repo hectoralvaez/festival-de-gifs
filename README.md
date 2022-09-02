@@ -21,6 +21,7 @@ Para publicar en Github Pages:
 - Hacer el `build` para que genere la carpeta `dist`
 - Una vez hecha la carpeta, renombrarla a `docs`
 - Subir el repositorio a GitHib
+- Para que funcione en Github Pages hay que actualizar las rutas dentro del index.html de la carpeta docs para que lo haga de forma relativa a donde está
 
 <br />
 
