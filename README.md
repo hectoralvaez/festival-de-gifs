@@ -81,6 +81,9 @@ describe("Pruebas en <GifItem />", () => {
 });
 ```
 
+IMPORTANTE:  
+Esta prueba no asegura que la imagen o el título estén correctamente colocados, solo asegura que las piezas del html están sintácticamente igual que cuando se generó. Es útil, pero no en componentes que cambian mucho
+
 ---
 
 # 99. Configurar el ambiente de pruebas
