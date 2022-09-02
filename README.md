@@ -13,6 +13,18 @@
 > MORE INFO:  
 > [Use Vite for React Apps instead of CRA](https://dev.to/nilanth/use-vite-for-react-apps-instead-of-cra-3pkg)
 
+> NOTA:  
+> Siempre falta tiempo para hacer tests, por lo tanto, se recomienda, como mínimo, hacer el test de la ruta crítica, es decir, la parte principal de la app. Si fuera una tienda, la ruta crítica es el proceso de compra (añadir productos al carito, el cesto de la compra, etc...)  
+
+---
+
+# 100. Implementando PropTypes
+
+Instalar las PropTypes (en termminal):  
+`yarn add prop-types`
+<br />
+
+
 ---
 
 # 99. Configurar el ambiente de pruebas
