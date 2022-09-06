@@ -1,4 +1,5 @@
 import { useState } from "react"
+import PropTypes from "prop-types";
 
 export const AddCategory = ({ onNewCategory }) => {     // Aquí ponemos las "props" { setCategories } pero desestructuradas, de manera que ya podemos 
                                                         // gestionar la función "setCategories"
@@ -51,4 +52,8 @@ export const AddCategory = ({ onNewCategory }) => {     // Aquí ponemos las "pr
         />
     </form>
   )
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired,   // Nos aseguramos de que SIEMPRE va a ser una función y que es requerida
 }
