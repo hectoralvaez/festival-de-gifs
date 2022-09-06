@@ -12,7 +12,7 @@ describe('Pruebas en getGifs()', () => {
         // Hay que asegurarse de que devuelva un arreglo de gifs como mínimo con la estructura que tenemos marcada en la función (id, title, url)  
         // Simplemente evaluamos que devuelvan "strings", no miramos que la url tenga "http" ni nada por el estilo      
         expect( gifs[0] ).toEqual({
-            id: expect.any( Number ),
+            id: expect.any( String ),
             title: expect.any( String ),
             url: expect.any( String ),
         });
