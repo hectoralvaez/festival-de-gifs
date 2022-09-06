@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { AddCategory } from "../../src/components/AddCategory";
 
 describe("Pruebas en <AddCategory />", () => {
+    const inputValue = 'Saitama';
 
     test("Tiene que cambiar el valor de la caja de texto", () => {
             // SUJETO DE PRUEBAS: "AddCategory"
@@ -9,10 +10,27 @@ describe("Pruebas en <AddCategory />", () => {
             render( <AddCategory onNewCategory={ ()=> {} }/> );     // Si onNewCategory={} no devuelve una función "()=> {}", da error
             const input = screen.getByRole('textbox');
 
-            fireEvent.input( input, { target: { value: 'Saitama' } });      // Con "fireEvent" de @testing-library/react, podemos disparar eventos
+            fireEvent.input( input, { target: { value: inputValue } });      // Con "fireEvent" de @testing-library/react, podemos disparar eventos
                                                                             // De esta manera estamos simulando que el usuario introduce el texto "Saitama" dentro del "input"
-            expect( input.value ).toBe('Saitama');
+            expect( input.value ).toBe(inputValue);
 
             // screen.debug();
+    });
+    test("Tiene que llamar onNewCategory si el input tiene un valor", () => {
+        // TODO: ???
+
+        render( <AddCategory onNewCategory={ ()=> {} }/> );     // Si onNewCategory={} no devuelve una función "()=> {}", da error
+        const input = screen.getByRole('textbox');
+        const form = screen.getByRole('form');
+
+        fireEvent.input( input, { target: { value: inputValue } });
+        fireEvent.submit( form );
+        // screen.debug();
+
+        expect( input.value ).toBe('');     // Esperamos que una vez enviado el form, 
+                                            // el imput vuelva a estar vacío, ya que en la función "handleSubmit" es lo que hace:
+                                            // setInputValue('');
+
+
     });
 });

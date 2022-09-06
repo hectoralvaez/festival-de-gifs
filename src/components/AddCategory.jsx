@@ -30,7 +30,8 @@ export const AddCategory = ({ onNewCategory }) => {     // Aquí ponemos las "pr
     }
 
   return (
-    <form onSubmit={ handleSubmit }>    {/* Con el uso del formulario no aseguramos que al ENVIARLO (con botón o con la tecla enter) hace la
+    <form onSubmit={ handleSubmit } aria-label="form">    {/* React testing Library no detecta el "form" si no le añadimos el aria-label="form"  */ }
+                                            {/* Con el uso del formulario no aseguramos que al ENVIARLO (con botón o con la tecla enter) hace la
                                             acción de enviar la información que hay en el imput.
                                             Si no se hiciera así, habría que controlar que cuando está escribiendo en el input, al darle a la tecla "enter"
                                             envie el contenido */}

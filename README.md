@@ -40,6 +40,21 @@ En terminal: `yarn add --dev @testing-library/react @types/jest jest-environment
 
 ---
 
+
+# 105. Simular un submit del formulario
+
+Tenemos que hacer dos pruebas
+1. El submit del form
+2. El valor del input (si va vacío/si tiene datos)
+
+NOTA:  
+React testing Library no detecta el "form" si no le añadimos el `aria-label="form"`  
+
+
+<br />
+
+---
+
 # 103. Pruebas en el helper getGifs
 
 No nos vamos a detener a analizar cada parte del código de la función.  
