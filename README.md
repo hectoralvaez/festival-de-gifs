@@ -34,6 +34,38 @@ En terminal: `yarn add --dev @testing-library/react @types/jest jest-environment
 
 ---
 
+# 103. Pruebas en el helper getGifs
+
+No nos vamos a detener a analizar cada parte del código de la función.  
+Sí analizaremos el resultado de la función, pasando una categoría, tiene que devolver una respuesta concreta, pero no entramos a testear el `fetch`ni nada en concreto.
+
+Si estamos evaluando el funcionamiento de una API externa, no podemos estar seguros de la respuesta que va a dar.  
+Por ejemplo, no podemos hacer un console.log de lo que devuelve la función pasando por la api y compararlo ya que podrían añadir nuevos gifs.  
+
+APUNTE:  
+Si la función es asíncrona, el test también lo hacemos como "async" `test('Tiene que retornar un array de gifs', async() => {` y podemos usar el "await" al llamar la función `const gifs = await getGifs(category);`  
+
+✕ TEST QUE NO NOS SIRVEN PARA CONFIRMAR EL FUNCIONAMIENTO DE LA FUNCIÓN:  
+1. No sirve pillar la respuesta que nos da el `console.log(gifs)` y compararla con lo que devuelve el test, podrían haber cambios en la API
+2. Si supieramos que SIEMPRE va a devolver un array de 20 elementos, si la categoría devuelve menos de 20 resultados, petaría, pero no querría decir que falla nuestra aplicación. Por lo tanto, `expect( gifs.length ).toBe( 20 );` no sería un buen test.
+
+
+✓ TEST QUE SÍ NOS SIRVEN PARA CONFIRMAR EL FUNCIONAMIENTO DE LA FUNCIÓN:  
+1. Para asegurar que por lo menos devuelva un elemento en el array `expect( gifs.length ).toBeGreaterThan( 0 );` (pero no nos aseguramos de que sea un array de gifs)
+2. Para asegurar que devuelva un arreglo de gifs como mínimo con la estructura que tenemos marcada en la función (id, title, url)  
+```javascript
+expect( gifs[0] ).toEqual({
+    id: expect.any( String ),
+    title: expect.any( String ),
+    url: expect.any( String ),
+});
+```
+(Simplemente evaluamos que devuelvan "strings", no miramos que la url tenga "http" ni nada parecido)
+
+<br />
+
+---
+
 # 102. Pruebas del componente - GifGridItem
 
 `screen.debug();`  
