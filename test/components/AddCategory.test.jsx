@@ -17,9 +17,9 @@ describe("Pruebas en <AddCategory />", () => {
             // screen.debug();
     });
     test("Tiene que llamar onNewCategory si el input tiene un valor", () => {
-        // TODO: ???
+        const onNewCategory = jest.fn();    // Declaramos "onNewCategory" como una función ficticia "Mock" vía Jest.
 
-        render( <AddCategory onNewCategory={ ()=> {} }/> );     // Si onNewCategory={} no devuelve una función "()=> {}", da error
+        render( <AddCategory onNewCategory={ onNewCategory }/> );     // Si onNewCategory={} no devuelve una función "()=> {}", da error
         const input = screen.getByRole('textbox');
         const form = screen.getByRole('form');
 
@@ -31,6 +31,20 @@ describe("Pruebas en <AddCategory />", () => {
                                             // el imput vuelva a estar vacío, ya que en la función "handleSubmit" es lo que hace:
                                             // setInputValue('');
 
+        expect( onNewCategory ).toHaveBeenCalled();                     // Confirmar que la función se llama
+        expect( onNewCategory ).toHaveBeenCalledTimes(1);               // Confirmar que la función se llama 1 vez
+        expect( onNewCategory ).toHaveBeenCalledWith( inputValue );     // Confirmar que la función se llama con el valor del inputValue "Saitama"
 
+    });
+
+    test("NO tiene que llamar onNewCategory si el input está vacío", () => {
+        const onNewCategory = jest.fn();    // Declaramos "onNewCategory" como una función ficticia "Mock" vía Jest.
+        render( <AddCategory onNewCategory={ onNewCategory }/> );     // Si onNewCategory={} no devuelve una función "()=> {}", da error
+
+        const form = screen.getByRole('form');
+        fireEvent.submit( form );
+
+        expect( onNewCategory ).toHaveBeenCalledTimes(0);   // Confirmar que la función se llama 0 veces
+        expect( onNewCategory ).not.toHaveBeenCalled();     // Confirmar que la función NO se llama
     });
 });

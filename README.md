@@ -42,6 +42,28 @@ En terminal: `yarn add --dev @testing-library/react @types/jest jest-environment
 ---
 
 
+# 106. Jest Functions
+Tenemos que evaluar el comportamiento de una función, en nuestro caso, que onNewCategory sea llamada con el valor que tenía la caja de texto.  
+
+onNewCategory, es una función que se está enviando como argumento a "AddCategory" y además esa función es obligatoria, definida con propTypes como .isRequired  
+
+La función cuando se está evaluando en el test es esta `()=> {}`  
+
+¿Cómo evaluamos esa función? Hay que saber si ha sido llamada, con qué valor ha sido llamada, que se haya llamado una vez, etc  
+
+Así definimos una función "Mock" con Jest (en testing llamamos "Mock" a una simulación).  
+
+```javascript
+const onNewCategory = jest.fn();
+```
+
+  
+
+<br />
+
+---
+
+
 # 105. Simular un submit del formulario
 
 Tenemos que hacer dos pruebas
