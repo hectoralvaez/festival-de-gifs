@@ -42,6 +42,18 @@ En terminal: `yarn add --dev @testing-library/react @types/jest jest-environment
 ---
 
 
+# 107. Pruebas del componente GifGrid - Mock customHook
+
+Este component trabaja con un Custom Hook, lo que hace un poco más complicado el testeo.  
+
+Pero en este test solo nocs centramos en probar el GifGrid, el custom hook useFetchGifs se testeará a parte, para simplificar los tests.  
+
+Tienen que ser tests unitarios, no es obligatorio comporbar todo lo que hay dentro del componente, solo el funcionamiento del componente en sí.
+
+<br />
+
+---
+
 # 106. Jest Functions
 Tenemos que evaluar el comportamiento de una función, en nuestro caso, que onNewCategory sea llamada con el valor que tenía la caja de texto.  
 
