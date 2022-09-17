@@ -42,6 +42,25 @@ En terminal: `yarn add --dev @testing-library/react @types/jest jest-environment
 ---
 
 
+# 108. Hacer un mock completo de un Custom Hook
+Hace un Mock completo de este path "../../src/hooks/useFetchGifs":  
+```javascript
+jest.mock('../../src/hooks/useFetchGifs');  
+```
+(Hay que importarlo previamente `import { useFetchGifs } from "../../src/hooks/useFetchGifs";`)
+
+Una vez dentro del test, usamos `mockReturnValue`, una función de Jest para simular que se dispara la función:  
+```javascript
+useFetchGifs.mockReturnValue({      
+    images: [],
+    isLoading: true
+});
+```
+
+
+<br />
+
+---
 # 107. Pruebas del componente GifGrid - Mock customHook
 
 Este component trabaja con un Custom Hook, lo que hace un poco más complicado el testeo.  
