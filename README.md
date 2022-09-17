@@ -41,7 +41,59 @@ En terminal: `yarn add --dev @testing-library/react @types/jest jest-environment
 
 ---
 
+# 🔬 109. Pruebas sobre customHooks
+En la versión 16 y 17 de React se utilizaba el [React Hooks Testing Library](https://react-hooks-testing-library.com).  
 
+En la versión 18 no se recomienda utilizarlo, ya no funciona, pero se ha fusionado con React Testing Library (RTL), por lo tanto, los hooks están integrados en React Testing Library (RTL).  
+
+
+Con los Hooks tenemos que evaluar:  
+- Elementos de entrada
+- Salida
+
+Por lo general los Hooks usan sus propias funciones para cambiar el estado, pero en este caso, hacemos nosotros el cambio manualmente de `isLoading: true` a `isLoading: false`
+
+Los Hooks solo pueden ser llamados dentro del cuerpo de un Functional Component.  
+
+Aparentemente, se podría hacer de la siguiente manera:  
+
+```javascript
+const { images, isLoading } = useFetchGifs();
+```
+
+Pero no funciona porque los Hooks necesitan parte del ciclo de vida de los componentes de React, no se pueden evaluar de forma aislada.  
+
+Para eso podemos usar la funcion `RenderHook` de React Testing Library (antes (React 16/17) se tenía que importar de "React Hooks Testing Library", pero ya está integrado en RTL).  
+
+Creamos un Call Back (una función) en la que mandamos llamar el hook "useFetchGifs" pasándole la categoría 'APM'
+
+```javascript
+renderHook( ()=> useFetchGifs('APM') );
+```
+
+`renderHook` devuelve varias cosas, así que lo desestructuramos:
+```javascript
+const { result } = renderHook( () => useFetchGifs('APM') ); 
+```
+Obteniendo este objeto:  
+`{ current: { images: [], isLoading: true } }`
+
+Desestructuramos el resultado "result.current"  
+```javascript
+        const { images, isLoading } = result.current;   
+```
+Y ya podemos hacer los Aserts:  
+```javascript
+        expect( images.length ).toBe(0);
+        expect( isLoading ).toBeTruthy();
+```
+
+
+El segundo test, bastante denso, con un async/await e importando `waitFor`de RTL  
+
+<br />
+
+---
 # 108. Hacer un mock completo de un Custom Hook
 Hace un Mock completo de este path "../../src/hooks/useFetchGifs":  
 ```javascript
