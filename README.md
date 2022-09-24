@@ -5,6 +5,20 @@ GitHub Pages: https://hectoralvaez.github.io/festival-de-gifs/
 
 React, Vite, GitHub, Jest, React Testing Library, Netlify, GitHub Pages
 
+
+## ARRANCAR UN PROYECTO CON YARN + VITE:  
+En la carpeta donde vamos a instalar el proyecto:  
+`yarn create vite`
+
+1. Nos pide el nombre del proyecto:  
+`hook-app`
+2. Seleccionamos el framework "React"  
+3. Seleccionamos la variante "React"  
+
+En la carpeta donde ya se ha instalado el proyecto:  
+`yarn`
+
+
 > ### LINKS DE INTERÉS:  
 > [Documentación de React y recursos relacionados](https://es.reactjs.org/docs/getting-started.html)  
 
