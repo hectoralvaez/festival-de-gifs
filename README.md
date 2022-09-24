@@ -41,6 +41,21 @@ En terminal: `yarn add --dev @testing-library/react @types/jest jest-environment
 
 ---
 
+# 🏁 FIN SECCIÓN 8: Testing - Probando la aplicación de GifExpert
+
+
+# 🔬 110. Pruebas de tarea (sobre GifExpert)
+
+### TODO: Hacer las pruebas, por ejemplo:  
+✅ Tomar un snapshot  
+🔳 Escribir en input i enviar formulario y ver qué pasa  
+🔳 Que pasa si se envía la misma cataegoria  
+🔳 Que pasa si se envía una cataegoria diferente  
+
+<br />
+
+---
+
 # 🔬 109. Pruebas sobre customHooks
 En la versión 16 y 17 de React se utilizaba el [React Hooks Testing Library](https://react-hooks-testing-library.com).  
 
@@ -94,7 +109,7 @@ El segundo test, bastante denso, con un async/await e importando `waitFor`de RTL
 <br />
 
 ---
-# 108. Hacer un mock completo de un Custom Hook
+# 🔬 108. Hacer un mock completo de un Custom Hook
 Hace un Mock completo de este path "../../src/hooks/useFetchGifs":  
 ```javascript
 jest.mock('../../src/hooks/useFetchGifs');  
@@ -113,7 +128,7 @@ useFetchGifs.mockReturnValue({
 <br />
 
 ---
-# 107. Pruebas del componente GifGrid - Mock customHook
+# 🔬 107. Pruebas del componente GifGrid - Mock customHook
 
 Este component trabaja con un Custom Hook, lo que hace un poco más complicado el testeo.  
 
@@ -125,7 +140,7 @@ Tienen que ser tests unitarios, no es obligatorio comporbar todo lo que hay dent
 
 ---
 
-# 106. Jest Functions
+# 🔬 106. Jest Functions
 Tenemos que evaluar el comportamiento de una función, en nuestro caso, que onNewCategory sea llamada con el valor que tenía la caja de texto.  
 
 onNewCategory, es una función que se está enviando como argumento a "AddCategory" y además esa función es obligatoria, definida con propTypes como .isRequired  
@@ -147,7 +162,7 @@ const onNewCategory = jest.fn();
 ---
 
 
-# 105. Simular un submit del formulario
+# 🔬 105. Simular un submit del formulario
 
 Tenemos que hacer dos pruebas
 1. El submit del form
@@ -161,7 +176,7 @@ React testing Library no detecta el "form" si no le añadimos el `aria-label="fo
 
 ---
 
-# 103. Pruebas en el helper getGifs
+# 🔬 103. Pruebas en el helper getGifs
 
 No nos vamos a detener a analizar cada parte del código de la función.  
 Sí analizaremos el resultado de la función, pasando una categoría, tiene que devolver una respuesta concreta, pero no entramos a testear el `fetch`ni nada en concreto.
@@ -193,7 +208,7 @@ expect( gifs[0] ).toEqual({
 
 ---
 
-# 102. Pruebas del componente - GifGridItem
+# 🔬 102. Pruebas del componente - GifGridItem
 
 `screen.debug();`  
 Con screen.debug en el test, imprimimos la estructura completa de lo que estamos testeando, lo que permite ver cada elemento html  
@@ -219,7 +234,7 @@ expect( alt ).toBe( title );    // expect(screen.getByRole('img').alt).toBe( tit
 
 ---
 
-# 100. Implementando PropTypes
+# 🔬 100. Implementando PropTypes
 
 Instalar las PropTypes (en termminal):  
 `yarn add prop-types`
@@ -278,7 +293,7 @@ Esta prueba no asegura que la imagen o el título estén correctamente colocados
 
 ---
 
-# 99. Configurar el ambiente de pruebas
+# 🔬 99. Configurar el ambiente de pruebas
 Seguir los pasos indicados en el documento `vite-testing-config.md`.
 
 
@@ -331,7 +346,7 @@ import 'whatwg-fetch'; // <-- yarn add whatwg-fetch
 
 
 
-# 98. Temas puntuales de la sección
+# 🔬 98. Temas puntuales de la sección
 
 ## ¿Qué veremos en esta sección?
 
@@ -350,7 +365,7 @@ En esta sección seguiremos expandiendo todo lo que habíamos visto anteriorment
 
 ---
 
-# INICIO SECCIÓN 8: Testing - Probando la aplicación de GifExpert
+# 🔬 INICIO SECCIÓN 8: Testing - Probando la aplicación de GifExpert
 
 
 ---
